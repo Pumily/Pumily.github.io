@@ -100,10 +100,6 @@
   <link rel="mask-icon" href="https://qiniu.pokio.fun/ylyicon.ico?v=1.0.4" color="#fff">
 
 
-  <link rel="manifest" href="/site.webmanifest">
-
-
-  <meta name="msapplication-config" content="/browserconfig.xml">
 
 
 
@@ -1848,8 +1844,8 @@
     }
   </script>-->
 
-  <script>
-    var serviceWorkerUri = '/sw.js';
+  <<script>
+    var serviceWorkerUri = '/service-worker.js';
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register(serviceWorkerUri).then(function() {
           if (navigator.serviceWorker.controller) {
@@ -1864,5 +1860,5 @@
         console.log('Service workers are not supported in the current browser.');
     }
   </script>
-</body>
-</html>
+<script>'use strict';'serviceWorker'in navigator&&navigator.serviceWorker.register('service-worker.js').then(function(a){a.onupdatefound=function(){var b=a.installing;b.onstatechange=function(){switch(b.state){case'installed':navigator.serviceWorker.controller?console.log('New or updated content is available.'):console.log('Content is now available offline!');break;case'redundant':console.error('The installing service worker became redundant.');}}}}).catch(function(a){console.error('Error during service worker registration:',a)});
+</script></body></html>

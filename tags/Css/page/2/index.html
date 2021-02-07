@@ -100,10 +100,6 @@
   <link rel="mask-icon" href="https://qiniu.pokio.fun/ylyicon.ico?v=1.0.4" color="#fff">
 
 
-  <link rel="manifest" href="/site.webmanifest">
-
-
-  <meta name="msapplication-config" content="/browserconfig.xml">
 
 
 
@@ -1084,8 +1080,8 @@
     }
   </script>-->
 
-  <script>
-    var serviceWorkerUri = '/sw.js';
+  <<script>
+    var serviceWorkerUri = '/service-worker.js';
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register(serviceWorkerUri).then(function() {
           if (navigator.serviceWorker.controller) {

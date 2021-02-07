@@ -100,10 +100,6 @@
   <link rel="mask-icon" href="https://qiniu.pokio.fun/ylyicon.ico?v=1.0.4" color="#fff">
 
 
-  <link rel="manifest" href="/site.webmanifest">
-
-
-  <meta name="msapplication-config" content="/browserconfig.xml" />
 
 
 
@@ -733,12 +729,28 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC81MjY5MS8yOTE2OA=="></div>
+    </div>
+
+  
 
 
   
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1307,8 +1319,8 @@
     }
   </script>-->
 
-  <script>
-    var serviceWorkerUri = '/sw.js';
+  <<script>
+    var serviceWorkerUri = '/service-worker.js';
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register(serviceWorkerUri).then(function() {
           if (navigator.serviceWorker.controller) {

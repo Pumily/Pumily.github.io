@@ -473,31 +473,6 @@
     
     
     <entry>
-      <title>JS怎么获取当前点击的子元素的下标（点击就能获得点击的元素的index）</title>
-      <link href="posts/42339.html"/>
-      <url>posts/42339.html</url>
-      
-        <content type="html"><![CDATA[<p>在不考虑兼容问题情况下，可用一下document.getElementsByClassName方法<br><a id="more"></a></p><pre><code class="javascript">var child = document.getElementsByClassName(&quot;child&quot;);for (var i = 0; i &lt; child.length; i++) {    var a = child[i];    a.index = i;//给每个className为child的元素添加index属性;    a.onclick = function () {        alert(this.index)    }}</code></pre><p>这样每次点击时就能获得你点击的元素的index值。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 项目随记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>nofollow属性的个人理解和用法</title>
       <link href="posts/38155.html"/>
       <url>posts/38155.html</url>
@@ -515,6 +490,31 @@
         <tags>
             
             <tag> 前端基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS怎么获取当前点击的子元素的下标（点击就能获得点击的元素的index）</title>
+      <link href="posts/42339.html"/>
+      <url>posts/42339.html</url>
+      
+        <content type="html"><![CDATA[<p>在不考虑兼容问题情况下，可用一下document.getElementsByClassName方法<br><a id="more"></a></p><pre><code class="javascript">var child = document.getElementsByClassName(&quot;child&quot;);for (var i = 0; i &lt; child.length; i++) {    var a = child[i];    a.index = i;//给每个className为child的元素添加index属性;    a.onclick = function () {        alert(this.index)    }}</code></pre><p>这样每次点击时就能获得你点击的元素的index值。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       

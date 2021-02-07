@@ -1883,7 +1883,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dfd68b;
+  background: #2affff;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -3506,7 +3506,7 @@ a {
   text-shadow: 0 1px 1px #47456d;
   margin-bottom: 130px;
   z-index: 1;
-  font-family: 'Luckiest Guy';
+  font-family: 'Hachi Maru Pop';
   display: block;
 }
 @media (max-width: 991px) {

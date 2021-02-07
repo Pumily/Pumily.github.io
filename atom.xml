@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Giao! Pokio</title>
+  <title>イリヤのPokio</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -483,22 +483,24 @@ var bbb = getCookie(&amp;#39;name&amp;#39;);
   </entry>
   
   <entry>
-    <title>JS怎么获取当前点击的子元素的下标（点击就能获得点击的元素的index）</title>
-    <link href="/posts/42339.html"/>
-    <id>/posts/42339.html</id>
+    <title>nofollow属性的个人理解和用法</title>
+    <link href="/posts/38155.html"/>
+    <id>/posts/38155.html</id>
     <published>2018-08-17T02:49:14.000Z</published>
-    <updated>2020-09-25T17:22:03.259Z</updated>
+    <updated>2021-02-01T17:35:35.147Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;在不考虑兼容问题情况下，可用一下document.getElementsByClassName方法&lt;br&gt;
+      &lt;h3 id=&quot;什么是nofollow属性呢？&quot;&gt;&lt;a href=&quot;#什么是nofollow属性呢？&quot; class=&quot;headerlink&quot; title=&quot;什么是nofollow属性呢？&quot;&gt;&lt;/a&gt;什么是nofollow属性呢？&lt;/h3&gt;&lt;p&gt;nofollow是HTML中a标签的一个属性值。这个属性的作用就是告诉我们的搜索引擎不要去追踪、记录带有这个属性的链接。&lt;/p&gt;
+&lt;h3 id=&quot;添加nofollow属性的目的是什么？&quot;&gt;&lt;a href=&quot;#添加nofollow属性的目的是什么？&quot; class=&quot;headerlink&quot; title=&quot;添加nofollow属性的目的是什么？&quot;&gt;&lt;/a&gt;添加nofollow属性的目的是什么？&lt;/h3&gt;&lt;p&gt;优化SEO,防止垃圾链接的蔓延。怎么说呢？再简单一点就是告诉搜索引擎那些链接是不重要的不要去看，顺便还diss下它。举个栗子：之前会有一些SEO作弊者回到到一些PR值（谷歌用于测评网页的一个方法，使用0-10来标识网页的等级标准）高的网站上留言、评论留下自己的链接，从而蛊惑搜索引擎，从而提高在搜索引擎上的排名。&lt;/p&gt;
+&lt;h3 id=&quot;怎么使用呢？&quot;&gt;&lt;a href=&quot;#怎么使用呢？&quot; class=&quot;headerlink&quot; title=&quot;怎么使用呢？&quot;&gt;&lt;/a&gt;怎么使用呢？&lt;/h3&gt;
     
     </summary>
     
       <category term="项目随记" scheme="/categories/%E9%A1%B9%E7%9B%AE%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="JavaScript" scheme="/tags/JavaScript/"/>
+      <category term="前端基础" scheme="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

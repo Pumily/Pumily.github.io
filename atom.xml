@@ -328,30 +328,6 @@ white-space:nowrap;
   </entry>
   
   <entry>
-    <title>网页开头的doctype(文档类型) 的作用是什么？</title>
-    <link href="http://pokio.fun/posts/49633.html"/>
-    <id>http://pokio.fun/posts/49633.html</id>
-    <published>2018-08-21T08:28:35.000Z</published>
-    <updated>2020-09-25T17:19:59.242Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;简单来说就是告诉我们的浏览器采用什么方式渲染页面。&lt;/p&gt;
-&lt;p&gt;具体些：&lt;/p&gt;
-&lt;p&gt;DOCTYPE是document type(文档类型的）的简写，它必须放每个XHTML页面在所有的标识文档和代码之上。它是用来说明你的XHTML或HTML是什么版本。&lt;strong&gt;需要注意一下的是：&lt;/strong&gt; 在HTML 5 中，DOCTYPE 是不区分大小写；不过对于XHTML、&lt;a href=&quot;https://www.w3.org/TR/html-polyglot/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Polyglot HTML&lt;/a&gt;，DOCTYPE 这几个字母需要大写。如果怕和我一样容易忘记的话，就都默认大写就好啦。&lt;/p&gt;
-&lt;p&gt;其中浏览器的渲染模式主要是有三种：&lt;strong&gt;Quirks Mode&lt;/strong&gt;（混杂模式、怪异模式、兼容模式。因为翻译不同的原因）、&lt;strong&gt;Standards Mode&lt;/strong&gt;（标准模式、严格模式）、&lt;strong&gt;Almost Standards Mode&lt;/strong&gt;（几乎标准模式）。&lt;/p&gt;
-&lt;p&gt;而浏览器之所以可以识别我们页面想要的版本就是&lt;strong&gt;DTD&lt;/strong&gt;的存在（文档类型定义，浏览器会根据里面所规定的文档规则来读取你的标识的）。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="系统的前端基础学习" scheme="http://pokio.fun/categories/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="前端基础" scheme="http://pokio.fun/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>通过Swiper插件简单实现div大部分的滑动功能</title>
     <link href="http://pokio.fun/posts/30717.html"/>
     <id>http://pokio.fun/posts/30717.html</id>
@@ -380,6 +356,30 @@ white-space:nowrap;
     
     
       <category term="插件" scheme="http://pokio.fun/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网页开头的doctype(文档类型) 的作用是什么？</title>
+    <link href="http://pokio.fun/posts/49633.html"/>
+    <id>http://pokio.fun/posts/49633.html</id>
+    <published>2018-08-21T08:28:35.000Z</published>
+    <updated>2020-09-25T17:19:59.242Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单来说就是告诉我们的浏览器采用什么方式渲染页面。&lt;/p&gt;
+&lt;p&gt;具体些：&lt;/p&gt;
+&lt;p&gt;DOCTYPE是document type(文档类型的）的简写，它必须放每个XHTML页面在所有的标识文档和代码之上。它是用来说明你的XHTML或HTML是什么版本。&lt;strong&gt;需要注意一下的是：&lt;/strong&gt; 在HTML 5 中，DOCTYPE 是不区分大小写；不过对于XHTML、&lt;a href=&quot;https://www.w3.org/TR/html-polyglot/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Polyglot HTML&lt;/a&gt;，DOCTYPE 这几个字母需要大写。如果怕和我一样容易忘记的话，就都默认大写就好啦。&lt;/p&gt;
+&lt;p&gt;其中浏览器的渲染模式主要是有三种：&lt;strong&gt;Quirks Mode&lt;/strong&gt;（混杂模式、怪异模式、兼容模式。因为翻译不同的原因）、&lt;strong&gt;Standards Mode&lt;/strong&gt;（标准模式、严格模式）、&lt;strong&gt;Almost Standards Mode&lt;/strong&gt;（几乎标准模式）。&lt;/p&gt;
+&lt;p&gt;而浏览器之所以可以识别我们页面想要的版本就是&lt;strong&gt;DTD&lt;/strong&gt;的存在（文档类型定义，浏览器会根据里面所规定的文档规则来读取你的标识的）。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="系统的前端基础学习" scheme="http://pokio.fun/categories/%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="前端基础" scheme="http://pokio.fun/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -483,22 +483,24 @@ var bbb = getCookie(&amp;#39;name&amp;#39;);
   </entry>
   
   <entry>
-    <title>JS怎么获取当前点击的子元素的下标（点击就能获得点击的元素的index）</title>
-    <link href="http://pokio.fun/posts/42339.html"/>
-    <id>http://pokio.fun/posts/42339.html</id>
+    <title>nofollow属性的个人理解和用法</title>
+    <link href="http://pokio.fun/posts/38155.html"/>
+    <id>http://pokio.fun/posts/38155.html</id>
     <published>2018-08-17T02:49:14.000Z</published>
-    <updated>2020-09-25T17:22:03.259Z</updated>
+    <updated>2021-02-01T17:35:35.147Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;在不考虑兼容问题情况下，可用一下document.getElementsByClassName方法&lt;br&gt;
+      &lt;h3 id=&quot;什么是nofollow属性呢？&quot;&gt;&lt;a href=&quot;#什么是nofollow属性呢？&quot; class=&quot;headerlink&quot; title=&quot;什么是nofollow属性呢？&quot;&gt;&lt;/a&gt;什么是nofollow属性呢？&lt;/h3&gt;&lt;p&gt;nofollow是HTML中a标签的一个属性值。这个属性的作用就是告诉我们的搜索引擎不要去追踪、记录带有这个属性的链接。&lt;/p&gt;
+&lt;h3 id=&quot;添加nofollow属性的目的是什么？&quot;&gt;&lt;a href=&quot;#添加nofollow属性的目的是什么？&quot; class=&quot;headerlink&quot; title=&quot;添加nofollow属性的目的是什么？&quot;&gt;&lt;/a&gt;添加nofollow属性的目的是什么？&lt;/h3&gt;&lt;p&gt;优化SEO,防止垃圾链接的蔓延。怎么说呢？再简单一点就是告诉搜索引擎那些链接是不重要的不要去看，顺便还diss下它。举个栗子：之前会有一些SEO作弊者回到到一些PR值（谷歌用于测评网页的一个方法，使用0-10来标识网页的等级标准）高的网站上留言、评论留下自己的链接，从而蛊惑搜索引擎，从而提高在搜索引擎上的排名。&lt;/p&gt;
+&lt;h3 id=&quot;怎么使用呢？&quot;&gt;&lt;a href=&quot;#怎么使用呢？&quot; class=&quot;headerlink&quot; title=&quot;怎么使用呢？&quot;&gt;&lt;/a&gt;怎么使用呢？&lt;/h3&gt;
     
     </summary>
     
       <category term="项目随记" scheme="http://pokio.fun/categories/%E9%A1%B9%E7%9B%AE%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="JavaScript" scheme="http://pokio.fun/tags/JavaScript/"/>
+      <category term="前端基础" scheme="http://pokio.fun/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

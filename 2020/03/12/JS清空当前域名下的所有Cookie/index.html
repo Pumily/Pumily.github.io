@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pokome</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+ 
+<body>
+    <!-- 网站名 -->
+    <h1>
+        <a href="/">Hexo</a> |
+        <a href="/">Home</a> | 
+        <a href="/pumily/pumily/archives">Archive</a> | 
+        <a href="/about/">About</a>
+    </h1>
+    <!-- 博客详情 -->
+ 
+
+<h2>JS清空当前域名下的所有Cookie</h2>
+<p>2020/03/12 </p>
+<h2 id="JS清空当前域名下的所有Cookie"><a href="#JS清空当前域名下的所有Cookie" class="headerlink" title="JS清空当前域名下的所有Cookie"></a>JS清空当前域名下的所有Cookie</h2><p>今天项目突然需要用到当用户退出登录时，清楚用户域名下的所有cookie。<br>不多哔哔，直接上代码  </p>
+<h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a><a href="#%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5" title="代码片段"></a>代码片段</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//清除所有cookie函数</span><br><span class="line">function clearAllCookie() &#123;</span><br><span class="line">    var date=new Date();</span><br><span class="line">    date.setTime(date.getTime()-10000);</span><br><span class="line">    //keys为所要删除cookie的名字</span><br><span class="line">    var keys=document.cookie.match(/[^ =;]+(?=\=)/g);</span><br><span class="line">    //删除所有cookie</span><br><span class="line">    if (keys) &#123;</span><br><span class="line">        for (var i =  keys.length; i--;)</span><br><span class="line">        document.cookie=keys[i]+&quot;=0; expire=&quot;+date.toGMTString()+&quot;; path=/&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ 
+
+
+    <h5>
+        <a href="/pumily/pumily/2020/04/09/Mysql%E6%95%B0%E6%8D%AE%E5%BA%9310%E4%B8%87%E6%9D%A1%E6%95%B0%E6%8D%AE%E5%A4%9A%E8%A1%A8%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E9%80%9F%E5%BA%A6%E8%BF%87%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+            < 上一篇：Mysql数据库10万条数据多表联合查询速度过慢解决方案
+        </a>
+    </h5>
+
+
+
+    <h5>
+        <a href="/pumily/pumily/2020/02/08/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B0%8F%E6%A2%AF%E5%AD%90/">
+            下一篇：如何搭建一个属于自己的小梯子 >
+        </a>
+    </h5>
+
+ 
+
+    <h3>categories</h3>
+    <ul>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E9%9A%8F%E6%84%9F/">
+                    随感 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
+                    技术开发 
+                </a>
+            </li>
+        
+    </ul>
+
+    <h3>tags</h3>
+    <ul>
+        
+    </ul>
+</body>
+</html>

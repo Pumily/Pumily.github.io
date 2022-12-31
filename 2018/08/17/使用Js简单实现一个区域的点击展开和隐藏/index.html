@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pokome</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+ 
+<body>
+    <!-- 网站名 -->
+    <h1>
+        <a href="/">Hexo</a> |
+        <a href="/">Home</a> | 
+        <a href="/pumily/pumily/archives">Archive</a> | 
+        <a href="/about/">About</a>
+    </h1>
+    <!-- 博客详情 -->
+ 
+
+<h2>使用Js简单实现一个区域的点击展开和隐藏</h2>
+<p>2018/08/17 </p>
+<h2 id="使用Js简单实现一个区域的点击展开和隐藏"><a href="#使用Js简单实现一个区域的点击展开和隐藏" class="headerlink" title="使用Js简单实现一个区域的点击展开和隐藏"></a>使用Js简单实现一个区域的点击展开和隐藏</h2><p>为了实现点击”&gt;”符号就能够实现，下方显示区域“岗位描述”的展开显示和隐藏</p>
+<p><strong>Html代码片段：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;dt class=&quot;jotitle&quot;&gt;</span><br><span class="line">        &lt;span&gt;&#123;$vo.name&#125;&lt;/span&gt;</span><br><span class="line">        &lt;span class=&quot;desContr hand&quot; key=&quot;&#123;$key&#125;&quot;&gt;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/dt&gt;</span><br><span class="line">    &lt;dd class=&quot;joconten desEffc bb&#123;$key&#125;&quot;&gt;</span><br><span class="line">    &lt;dl class=&quot;j_15&quot;&gt;</span><br><span class="line">        &lt;dt class=&quot;j_t&quot;&gt;</span><br><span class="line">            岗位描述</span><br><span class="line">        &lt;/dt&gt; &#123;$vo.description&#125;</span><br><span class="line">    &lt;/dl&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>CSS片段：</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.desEffc &#123;</span><br><span class="line">    display:none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Js片段：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&#x27;.desContr&#x27;).click(function() &#123;</span><br><span class="line">    var key = $(this).attr(&#x27;key&#x27;);</span><br><span class="line">    var str = &#x27;.bb&#x27; + key;</span><br><span class="line">    $(str).toggleClass(&#x27;desEffc&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure> 
+
+
+    <h5>
+        <a href="/pumily/pumily/2018/08/17/nofollow%E5%B1%9E%E6%80%A7%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3%E5%92%8C%E7%94%A8%E6%B3%95/">
+            < 上一篇：nofollow属性的个人理解和用法
+        </a>
+    </h5>
+
+
+
+    <h5>
+        <a href="/pumily/pumily/2018/08/17/%E6%96%87%E5%AD%97%E8%B6%85%E5%87%BAdiv%E5%90%8E%E8%87%AA%E5%8A%A8%E9%9A%90%E8%97%8F/">
+            下一篇：文字超出div后自动隐藏（可以自己调节显示行数） >
+        </a>
+    </h5>
+
+ 
+
+    <h3>categories</h3>
+    <ul>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E9%9A%8F%E6%84%9F/">
+                    随感 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
+                    技术开发 
+                </a>
+            </li>
+        
+    </ul>
+
+    <h3>tags</h3>
+    <ul>
+        
+    </ul>
+</body>
+</html>

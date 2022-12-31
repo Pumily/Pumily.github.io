@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pokome</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+ 
+<body>
+    <!-- 网站名 -->
+    <h1>
+        <a href="/">Hexo</a> |
+        <a href="/">Home</a> | 
+        <a href="/pumily/pumily/archives">Archive</a> | 
+        <a href="/about/">About</a>
+    </h1>
+    <!-- 博客详情 -->
+ 
+
+<h2>通过Swiper插件简单实现div大部分的滑动功能</h2>
+<p>2018/08/21 </p>
+<h2 id="通过Swiper插件简单实现div大部分的滑动功能"><a href="#通过Swiper插件简单实现div大部分的滑动功能" class="headerlink" title="通过Swiper插件简单实现div大部分的滑动功能"></a>通过Swiper插件简单实现div大部分的滑动功能</h2><h3 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h3><p><strong>1.首先加载插件，需要用到的文件有swiper.min.js和swiper.min.css文件。可下载<a target="_blank" rel="noopener" href="https://www.swiper.com.cn/download/index.html#file1">Swiper</a>文件或使用<a target="_blank" rel="noopener" href="https://www.swiper.com.cn/cdn/index.html">CDN</a>。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/swiper.min.css&quot;&gt;//引入下载的css文件</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;script src=&quot;path/to/swiper.min.js&quot;&gt;&lt;/script&gt;//引入下载的js文件</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.HTML结构。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--需要实现效果的代码部位 开始--&gt;</span><br><span class="line">&lt;div class=&quot;swiper-container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-wrapper&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 2&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;!--需要实现效果的代码部位 结束--&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 如果需要分页器 --&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 如果需要导航按钮 --&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 如果需要滚动条 --&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-scrollbar&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">导航等组件可以放在container之外</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.可以给Swiper定义一个大小，当然不要也行。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.swiper-container &#123;</span><br><span class="line">    width: 600px;</span><br><span class="line">    height: 300px;</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<p><strong>4.初始化Swiper：最好是挨着标签</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;        </span><br><span class="line">  var mySwiper = new Swiper (&#x27;.swiper-container&#x27;, &#123;</span><br><span class="line">    direction: &#x27;vertical&#x27;,</span><br><span class="line">    loop: true,</span><br><span class="line"></span><br><span class="line">    // 如果需要分页器</span><br><span class="line">    pagination: &#123;</span><br><span class="line">      el: &#x27;.swiper-pagination&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    // 如果需要前进后退按钮</span><br><span class="line">    navigation: &#123;</span><br><span class="line">      nextEl: &#x27;.swiper-button-next&#x27;,</span><br><span class="line">      prevEl: &#x27;.swiper-button-prev&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    // 如果需要滚动条</span><br><span class="line">    scrollbar: &#123;</span><br><span class="line">      el: &#x27;.swiper-scrollbar&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)        </span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是如果不能写在HTML内容的后面，则需要在页面加载完成后再初始化（不推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">window.onload = function() &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当然你也可以用Jquery(不过和上面的方法差不多)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">$(document).ready(function () &#123;</span><br><span class="line"> ...</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这样就完成了，可以试试看效果了。</strong></p>
+ 
+
+
+    <h5>
+        <a href="/pumily/pumily/2018/08/21/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%A4%B4%E7%9A%84doctype(%E6%96%87%E6%A1%A3%E7%B1%BB%E5%9E%8B)%20%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88/">
+            < 上一篇：网页开头的doctype(文档类型)的作用是什么？
+        </a>
+    </h5>
+
+
+
+    <h5>
+        <a href="/pumily/pumily/2018/08/20/Cookie%E5%AE%8C%E6%95%B4%E7%9A%84%E5%85%AC%E7%94%A8%E5%B0%81%E8%A3%85%E6%96%B9%E5%BC%8F/">
+            下一篇：Cookie完整的公用封装方式 >
+        </a>
+    </h5>
+
+ 
+
+    <h3>categories</h3>
+    <ul>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E9%9A%8F%E6%84%9F/">
+                    随感 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
+                    技术开发 
+                </a>
+            </li>
+        
+    </ul>
+
+    <h3>tags</h3>
+    <ul>
+        
+    </ul>
+</body>
+</html>

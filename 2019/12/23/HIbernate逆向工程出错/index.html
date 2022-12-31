@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pokome</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+ 
+<body>
+    <!-- 网站名 -->
+    <h1>
+        <a href="/">Hexo</a> |
+        <a href="/">Home</a> | 
+        <a href="/pumily/pumily/archives">Archive</a> | 
+        <a href="/about/">About</a>
+    </h1>
+    <!-- 博客详情 -->
+ 
+
+<h2>HIbernate逆向工程出错 Could not initialize class org.hibernate.util.ReflectHelper</h2>
+<p>2019/12/23 </p>
+<h2 id="HIbernate逆向工程出错-Could-not-initialize-class-org-hibernate-util-ReflectHelper"><a href="#HIbernate逆向工程出错-Could-not-initialize-class-org-hibernate-util-ReflectHelper" class="headerlink" title="HIbernate逆向工程出错 Could not initialize class org.hibernate.util.ReflectHelper"></a>HIbernate逆向工程出错 Could not initialize class org.hibernate.util.ReflectHelper</h2><p>在使用hibernate逆向工程时报错，显示是<br><img src="https://qiniu.pokio.fun/hibernateError1.png" alt="hibernate逆向工程时报错"><br>而打开错误日志的详细报告却发现了这个  </p>
+<p><img src="https://qiniu.pokio.fun/hibernateError2.png" alt="错误日志"><br>Could not initialize class org.hibernate.util.ReflectHelper<br>emmmmm……</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>发现是项目中引入log4j的相关包影响的<br><img src="https://qiniu.pokio.fun/hibernateError3.png" alt="log4j包影响"></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>先把log4j的包和相关配置先删掉就好啦，此时就能正常逆向工程。</p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><p>可是我发现这样要删的东西还不少，删了还要配置还原回来，好麻烦啊。如果你和我一样，那么可以试试新建一个不相干的项目逆向工程，在复制进自己的项目就好啦。</p>
+ 
+
+
+    <h5>
+        <a href="/pumily/pumily/2019/12/31/2019%E5%B9%B4%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
+            < 上一篇：2019年年度总结
+        </a>
+    </h5>
+
+
+
+    <h5>
+        <a href="/pumily/pumily/2018/10/16/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E8%A7%A3%E5%86%B3view%E5%86%85%E6%96%87%E5%AD%97%E8%BF%87%E5%A4%9A%E6%BA%A2%E5%87%BA/">
+            下一篇：微信小程序内解决view内文字过多溢出 >
+        </a>
+    </h5>
+
+ 
+
+    <h3>categories</h3>
+    <ul>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E9%9A%8F%E6%84%9F/">
+                    随感 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
+                    技术开发 
+                </a>
+            </li>
+        
+    </ul>
+
+    <h3>tags</h3>
+    <ul>
+        
+    </ul>
+</body>
+</html>

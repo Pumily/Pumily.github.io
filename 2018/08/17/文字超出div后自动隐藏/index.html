@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pokome</title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+ 
+<body>
+    <!-- 网站名 -->
+    <h1>
+        <a href="/">Hexo</a> |
+        <a href="/">Home</a> | 
+        <a href="/pumily/pumily/archives">Archive</a> | 
+        <a href="/about/">About</a>
+    </h1>
+    <!-- 博客详情 -->
+ 
+
+<h2>文字超出div后自动隐藏（可以自己调节显示行数）</h2>
+<p>2018/08/17 </p>
+<h2 id="文字超出div后自动隐藏（可以自己调节显示行数）"><a href="#文字超出div后自动隐藏（可以自己调节显示行数）" class="headerlink" title="文字超出div后自动隐藏（可以自己调节显示行数）"></a>文字超出div后自动隐藏（可以自己调节显示行数）</h2><p>我发现，在不固定父级元素（如div）高度之前，只要内部子类的东西一多就会将整个父级元素撑大，导致整个页面的布局被影响改变了，这并不是我们想要的效果。</p>
+<p>那么怎么将一个子类里的文字超出后预先设定的范围后隐藏呢？  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.childrenClassName&#123;</span><br><span class="line">    display: -webkit-box;</span><br><span class="line">    -webkit-box-orient: vertical;</span><br><span class="line">    -webkit-line-clamp: 2;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">    height: 59px;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    margin: 0px;</span><br><span class="line">&#125;</span><br><span class="line">/*childrenClassName 为子元素的类名*/</span><br><span class="line">/*height 可以通过调整这个参数的大小来修改想要显示的行数*/</span><br></pre></td></tr></table></figure>
+
+<p>childrenClassName 为子元素的类名<br>height 可以通过调整这个参数的大小来修改想要显示的行数<br><strong>效果显示如下：</strong><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9xaW5pdS5wb2tpby5mdW4vZm9udG92ZXIxLnBuZw?x-oss-process=image/format,png" alt="效果显示"></p>
+ 
+
+
+    <h5>
+        <a href="/pumily/pumily/2018/08/17/%E4%BD%BF%E7%94%A8Js%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%8C%BA%E5%9F%9F%E7%9A%84%E7%82%B9%E5%87%BB%E5%B1%95%E5%BC%80%E5%92%8C%E9%9A%90%E8%97%8F/">
+            < 上一篇：使用Js简单实现一个区域的点击展开和隐藏
+        </a>
+    </h5>
+
+
+
+    <h5>
+        <a href="/pumily/pumily/2018/08/14/JQuery%20%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C%E4%B8%AD%E7%9A%84%20toggleClass()%20%E6%96%B9%E6%B3%95/">
+            下一篇：JQuery 属性操作中的 toggleClass()方法 >
+        </a>
+    </h5>
+
+ 
+
+    <h3>categories</h3>
+    <ul>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E9%9A%8F%E6%84%9F/">
+                    随感 
+                </a>
+            </li>
+        
+            <li>
+                <a href="/pumily/pumily/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
+                    技术开发 
+                </a>
+            </li>
+        
+    </ul>
+
+    <h3>tags</h3>
+    <ul>
+        
+    </ul>
+</body>
+</html>

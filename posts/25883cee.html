@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="欢迎你来到小栈，ღ( ´･ᴗ･` )比心。其实这里是一个主要用来发下自己觉得有用的东西，还有一些碎碎念博客。">
+  
+  <title>
+    网页开头的doctype(文档类型)的作用是什么？ |
+    
+    Pokio
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="https://qiniu.pokio.fun/ylyicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-网页开头的doctype(文档类型) 的作用是什么" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    网页开头的doctype(文档类型)的作用是什么？
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/posts/25883cee.html" class="article-date">
+  <time datetime="2018-08-20T16:00:00.000Z" itemprop="datePublished">2018-08-21</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">技术开发</a>
+</div>
+
+    </div>
+    
+
+    
+    
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <p>简单来说就是告诉我们的浏览器采用什么方式渲染页面。</p>
+<p>具体些：</p>
+<p>DOCTYPE是document type(文档类型的）的简写，它必须放每个XHTML页面在所有的标识文档和代码之上。它是用来说明你的XHTML或HTML是什么版本。<strong>需要注意一下的是：</strong> 在HTML 5 中，DOCTYPE 是不区分大小写；不过对于XHTML、<a target="_blank" rel="noopener" href="https://www.w3.org/TR/html-polyglot/">Polyglot HTML</a>，DOCTYPE 这几个字母需要大写。如果怕和我一样容易忘记的话，就都默认大写就好啦。<span id="more"></span></p>
+<p>其中浏览器的渲染模式主要是有三种：<strong>Quirks Mode</strong>（混杂模式、怪异模式、兼容模式。因为翻译不同的原因）、<strong>Standards Mode</strong>（标准模式、严格模式）、<strong>Almost Standards Mode</strong>（几乎标准模式）。</p>
+<p>而浏览器之所以可以识别我们页面想要的版本就是<strong>DTD</strong>的存在（文档类型定义，浏览器会根据里面所规定的文档规则来读取你的标识的）。  </p>
+<p>HTML 和 XHTML 的DOCTYPE 声明都有 strict&#x2F;transitional&#x2F;frameset 三种模式。 strict 模式禁止所有 presetational or deprecatedelements（例如 font 标签）以及 frameset标签（）；transitional 模式只禁止了 frameset标签；frameset 模式与 transitional 模式相同，并且允许 frameset 标签。</p>
+<blockquote>
+<p>XHTML 1.0 提供了三种DTD声明可供选择：</p>
+<ul>
+<li>过渡的(Transitional)：要求非常宽松的DTD，它允许你继续使用HTML4.01的标识(但是要符合xhtml的写法)，完整代码如下：<br>&lt;!DOCTYPE html PUBLIC “-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Transitional&#x2F;&#x2F;EN”<br>“<a target="_blank" rel="noopener" href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</a>&gt;</li>
+<li>严格的(Strict)：要求严格的DTD，你不能使用任何表现层的标识和属性，例如<br>，完整代码如下： &lt;!DOCTYPE html PUBLIC “-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Strict&#x2F;&#x2F;EN”<br>“<a target="_blank" rel="noopener" href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;</a>&gt;</li>
+<li>框架的(Frameset)：专门针对框架页面设计使用的DTD，如果你的页面中包含有框架，需要采用这种DTD，完整代码如下： &lt;!DOCTYPE html PUBLIC “-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Frameset&#x2F;&#x2F;EN”<br>“<a target="_blank" rel="noopener" href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;">http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;</a>&gt;<br>我们选择什么样的DOCTYPE 理想情况当然是严格的DTD，但对于我们大多数刚接触web标准的设计师来说，过渡的DTD(XHTML 1.0<br>Transitional)是目前理想选择。因为这种DTD还允许我们使用表现层的标识、元素和属性，也比较容易通过W3C的代码校验。<br>注：上面说的”表现层的标识、属性”是指那些纯粹用来控制表现的tag，例如用于排版的表格、背景颜色标识等。在XHTML中标识是用来表示结构的，而不是用来实现表现形式，我们过渡的目的是最终实现数据和表现相分离。<br>打个比方：人体模特换衣服。模特就好比数据，衣服则是表现形式，模特和衣服是分离的，这样你就可以随意换衣服。而原来HTML4中，数据和表现是混杂在一起的，要一次性换个表现形式非常困难</li>
+</ul>
+</blockquote>
+<p>更加全面、标准的论述可以参考文档 <a target="_blank" rel="noopener" href="https://hsivonen.fi/doctype/">ActivatingBrowser Modes with Doctype</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pokio.fun/posts/25883cee.html" data-id="cldef1rpa001do4ux792rgizd" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/posts/a136e85d.html" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      让CSS3的动画效果实现平滑过渡的简单方法
+      
+    </div>
+  </a>
+  
+  
+  <a href="/posts/61763ede.html" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">通过Swiper插件简单实现div大部分的滑动功能</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '4eb67f263af407696eec',
+    clientSecret: '0eaeb1b665d6c393439b18847391eefdde34759c',
+    repo: 'Pumily/Gitalk',
+    owner: 'pumily',
+    admin: ['pumily'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>Pokio &copy; 2023</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank">滇ICP备19008526号</a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="https://qiniu.pokio.fun/pokio1.gif" alt="Pokio"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

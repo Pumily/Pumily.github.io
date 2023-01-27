@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="欢迎你来到小栈，ღ( ´･ᴗ･` )比心。其实这里是一个主要用来发下自己觉得有用的东西，还有一些碎碎念博客。">
+  
+  <title>
+    nofollow属性的个人理解和用法 |
+    
+    Pokio
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="https://qiniu.pokio.fun/ylyicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-nofollow属性的个人理解和用法" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    nofollow属性的个人理解和用法
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/posts/9fe255f7.html" class="article-date">
+  <time datetime="2018-08-16T16:00:00.000Z" itemprop="datePublished">2018-08-17</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">技术开发</a>
+</div>
+
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="什么是nofollow属性呢？"><a href="#什么是nofollow属性呢？" class="headerlink" title="什么是nofollow属性呢？"></a>什么是nofollow属性呢？</h3><p>nofollow是HTML中a标签的一个属性值。这个属性的作用就是告诉我们的搜索引擎不要去追踪、记录带有这个属性的链接。<span id="more"></span></p>
+<h3 id="添加nofollow属性的目的是什么？"><a href="#添加nofollow属性的目的是什么？" class="headerlink" title="添加nofollow属性的目的是什么？"></a>添加nofollow属性的目的是什么？</h3><p>优化SEO,防止垃圾链接的蔓延。怎么说呢？再简单一点就是告诉搜索引擎那些链接是不重要的不要去看，顺便还diss下它。举个栗子：之前会有一些SEO作弊者回到到一些PR值（谷歌用于测评网页的一个方法，使用0-10来标识网页的等级标准）高的网站上留言、评论留下自己的链接，从而蛊惑搜索引擎，从而提高在搜索引擎上的排名。</p>
+<h3 id="怎么使用呢？"><a href="#怎么使用呢？" class="headerlink" title="怎么使用呢？"></a>怎么使用呢？</h3><p><strong>简单用法：</strong><br>1.在网页上的meta标签上添加“nofollow”，这相当于diss了整个网页，页面里所有的链接都会有“nofollow”属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;robots&quot; content=&quot;nofollow&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.为某个特定的超链接添加“nofollow”属性，让搜索引擎不要抓取这个链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a rel=&quot;external nofollow&quot; href=&quot;url&quot;&gt;&lt;span&gt;内容&lt;/span&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>进阶用法：</strong><br>在网页的  部分添加的  标签,以是实现对搜索引擎不同的收录需求<br>1.拦截所有搜索引擎对网页的收录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.只是拦截百度蜘蛛爬取网页，而允许其他搜索引擎收录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;baiduspider&quot; content=&quot;noindex, nofollow&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3.允许搜索引擎收录你的网页，但禁止它继续追踪记录外部链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;robots&quot; content=&quot;index,nofollow&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>4.允许搜索引擎收录你的网页，但禁止它收录网页上的图片：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meat name=&quot;robots&quot; content=&quot;noimageindex&quot;&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pokio.fun/posts/9fe255f7.html" data-id="cldef1roz000lo4ux7omo3gpu" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/posts/e5d66c70.html" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      JS怎么获取当前点击的子元素的下标（点击就能获得点击的元素的index）
+      
+    </div>
+  </a>
+  
+  
+  <a href="/posts/27ab1ab3.html" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">使用Js简单实现一个区域的点击展开和隐藏</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '4eb67f263af407696eec',
+    clientSecret: '0eaeb1b665d6c393439b18847391eefdde34759c',
+    repo: 'Pumily/Gitalk',
+    owner: 'pumily',
+    admin: ['pumily'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>Pokio &copy; 2023</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank">滇ICP备19008526号</a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="https://qiniu.pokio.fun/pokio1.gif" alt="Pokio"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="欢迎你来到小栈，ღ( ´･ᴗ･` )比心。其实这里是一个主要用来发下自己觉得有用的东西，还有一些碎碎念博客。">
+  
+  <title>
+    通过Swiper插件简单实现div大部分的滑动功能 |
+    
+    Pokio
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="https://qiniu.pokio.fun/ylyicon.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-通过Swiper插件简单实现div大部分的滑动功能" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    通过Swiper插件简单实现div大部分的滑动功能
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/posts/61763ede.html" class="article-date">
+  <time datetime="2018-08-20T16:00:00.000Z" itemprop="datePublished">2018-08-21</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">技术开发</a>
+</div>
+
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h3><p><strong>1.首先加载插件，需要用到的文件有swiper.min.js和swiper.min.css文件。可下载<a target="_blank" rel="noopener" href="https://www.swiper.com.cn/download/index.html#file1">Swiper</a>文件或使用<a target="_blank" rel="noopener" href="https://www.swiper.com.cn/cdn/index.html">CDN</a>。</strong></p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/swiper.min.css&quot;&gt;//引入下载的css文件</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;script src=&quot;path/to/swiper.min.js&quot;&gt;&lt;/script&gt;//引入下载的js文件</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.HTML结构。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--需要实现效果的代码部位 开始--&gt;</span><br><span class="line">&lt;div class=&quot;swiper-container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-wrapper&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 2&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;swiper-slide&quot;&gt;Slide 3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;!--需要实现效果的代码部位 结束--&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 如果需要分页器 --&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 如果需要导航按钮 --&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 如果需要滚动条 --&gt;</span><br><span class="line">    &lt;div class=&quot;swiper-scrollbar&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">导航等组件可以放在container之外</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.可以给Swiper定义一个大小，当然不要也行。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.swiper-container &#123;</span><br><span class="line">    width: 600px;</span><br><span class="line">    height: 300px;</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<p><strong>4.初始化Swiper：最好是挨着标签</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;        </span><br><span class="line">  var mySwiper = new Swiper (&#x27;.swiper-container&#x27;, &#123;</span><br><span class="line">    direction: &#x27;vertical&#x27;,</span><br><span class="line">    loop: true,</span><br><span class="line"></span><br><span class="line">    // 如果需要分页器</span><br><span class="line">    pagination: &#123;</span><br><span class="line">      el: &#x27;.swiper-pagination&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    // 如果需要前进后退按钮</span><br><span class="line">    navigation: &#123;</span><br><span class="line">      nextEl: &#x27;.swiper-button-next&#x27;,</span><br><span class="line">      prevEl: &#x27;.swiper-button-prev&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    // 如果需要滚动条</span><br><span class="line">    scrollbar: &#123;</span><br><span class="line">      el: &#x27;.swiper-scrollbar&#x27;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)        </span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>但是如果不能写在HTML内容的后面，则需要在页面加载完成后再初始化（不推荐）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">window.onload = function() &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当然你也可以用Jquery(不过和上面的方法差不多)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">$(document).ready(function () &#123;</span><br><span class="line"> ...</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这样就完成了，可以试试看效果了。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://pokio.fun/posts/61763ede.html" data-id="cldef1rpc001ho4ux6ljm4d6s" class="article-share-link">
+        分享
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/posts/25883cee.html" class="article-nav-link">
+    <strong class="article-nav-caption">前一篇</strong>
+    <div class="article-nav-title">
+      
+      网页开头的doctype(文档类型)的作用是什么？
+      
+    </div>
+  </a>
+  
+  
+  <a href="/posts/e4db0f19.html" class="article-nav-link">
+    <strong class="article-nav-caption">后一篇</strong>
+    <div class="article-nav-title">Cookie完整的公用封装方式</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '4eb67f263af407696eec',
+    clientSecret: '0eaeb1b665d6c393439b18847391eefdde34759c',
+    repo: 'Pumily/Gitalk',
+    owner: 'pumily',
+    admin: ['pumily'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>Pokio &copy; 2023</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank">滇ICP备19008526号</a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="https://qiniu.pokio.fun/pokio1.gif" alt="Pokio"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
